@@ -1,0 +1,16 @@
+{
+  "name": "shadow_m2/coke",
+  "description": "A layer between data source and output",
+  "authors": [
+    {
+      "name": "Mohammad Bagheri",
+      "email": "mohammadbagheri2014@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Shadow\\Coke\\": "packages/shadow/coke/src"
+    }
+  }
+}
