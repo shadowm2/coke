@@ -1,4 +1,4 @@
-Beautiful API with Coke !
+# Beautiful API with Coke !
 
 Installation (Lumen)
 $ composer require shadowm2/coke
