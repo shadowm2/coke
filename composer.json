@@ -7,10 +7,5 @@
       "email": "mohammadbagheri2014@gmail.com"
     }
   ],
-  "require": {},
-  "autoload": {
-    "psr-4": {
-      "Shadow\\Coke\\": "packages/shadow/coke/src"
-    }
-  }
+  "require": {}
 }
