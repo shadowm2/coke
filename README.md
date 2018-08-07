@@ -43,9 +43,12 @@ $user = User::first();
 $response = Coke::transform($user);
 return $response;
 
-- Output : {"name": "sth", "token": "dummy"}
+// Output : {"name": "sth", "token": "dummy"}
+```
 
-
+Input to coke must be in this form:
+```
+Coke::tranform($data): $data must be Collection|Model|LengthAwarePaginator
 ```
 If you want to use another transform function on a model and have multiple transform functions for a model, pass another parameter as below:
 
@@ -60,7 +63,7 @@ Coke::transform($user, $changes);
 
 
 Adding relationships is just a breeze. You should add your relationships in your queries and define transform functions in each used model.
-
+```
 $data = User::first()->posts()->where('post_type', 2);
 $response = Coke::transform($data);
 
@@ -70,6 +73,11 @@ $response = Coke::transform($data);
 *	}]}
 *
 */
-Pagination is also supported.
+```
 In this example, posts is a hasMany relationship so each post is transformed individually.
-Coke::tranform($data): $data must be Collection|Model|LengthAwarePaginator
+
+Pagination is also supported.
+```
+$users = User::paginate();
+return Coke::Transform($users);
+```
