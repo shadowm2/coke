@@ -4,8 +4,10 @@ Installation (Lumen)
 $ composer require shadowm2/coke
 
 Add this line in your bootstrap/app.php
+
 $app->register(Shadow\Coke\CokeServiceProvider::class);
 Use this alias for more comfort. add this line to your bootstrap/app.php  
+
 class_alias(\Shadow\Coke\Facades\Coke::class, 'Coke');
 
 
