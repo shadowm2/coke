@@ -1,20 +1,28 @@
 # Beautiful API with Coke !
 
-Installation (Lumen)
+## Installation (Lumen)
+
+```
 $ composer require shadowm2/coke
+```
 
 Add this line in your bootstrap/app.php
 
+```
 $app->register(Shadow\Coke\CokeServiceProvider::class);
+```
 
 Use this alias for more comfort. add this line to your bootstrap/app.php  
 
+
+```
 class_alias(\Shadow\Coke\Facades\Coke::class, 'Coke');
+```
 
 
-Usage
+## Usage
 Define a function called "transform" in a model.
-
+```
 class User .... {
 	...
 	function transform() 
@@ -25,27 +33,29 @@ class User .... {
 		];
 	}
 }
-then your can use Coke like this:
-
+```
+Then your can use Coke like this:
+```
 use Coke;
 
 
 $user = User::first();
 $response = Coke::transform($user);
 return $response;
-/*
-* Output : {"name": "sth", "token": "dummy"}
-*
-*/
 
+- Output : {"name": "sth", "token": "dummy"}
+
+
+```
 If you want to use another transform function on a model and have multiple transform functions for a model, pass another parameter as below:
 
+```
 $changes = [
 	'App\User' => 'anotherFunction' // keys in this array are path to your models
 ];
 
 Coke::transform($user, $changes);
-
+```
 
 
 
