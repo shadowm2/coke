@@ -34,7 +34,7 @@ class User .... {
 	}
 }
 ```
-Then your can use Coke like this:
+Then you can use Coke like this:
 ```
 use Coke;
 
@@ -64,7 +64,7 @@ Coke::transform($user, $changes);
 
 Adding relationships is just a breeze. You should add your relationships in your queries and define transform functions in each used model.
 ```
-$data = User::first()->posts()->where('post_type', 2);
+$data = User::first()->posts()->where('post_type', 2)->get();
 $response = Coke::transform($data);
 
 /*
